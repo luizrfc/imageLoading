@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="lazyimage">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Image loading url</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="custom.css" />
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+  <body ng-controller="home">
+    <div class="container">
+      <main class="row">
+          <div class="col-sm-3" ng-repeat="x in imageList">
+
+            <div class="thumbnail">
+                <img  image-on-load image="{{x.image}}"
+                error-message="Reload this image"
+                />
+                <div class="caption">
+                  <h3>{{x.text}}</h3>
+                </div>
+             </div>
+           </div>
+      </main>
+    </div>
+      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+      <script src="app/app.js"></script>
+  </body>
+</html>
